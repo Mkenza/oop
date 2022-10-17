@@ -10,8 +10,9 @@ MyListTest >> testAdd [
 	list := MyList new.
 	list add: 'hello'.
 	list add: 'world'.
+	list add: 'hey'.
 	
-	self assert: list size equals: 2.
+	self assert: list size equals: 3.
 ]
 
 { #category : #tests }
@@ -23,6 +24,17 @@ MyListTest >> testAt [
 	
 	self assert: ((list at: 1) value) equals: 'hello'.
 	self assert: ((list at: 2) value) equals: 'world'.
+]
+
+{ #category : #tests }
+MyListTest >> testAtPut [
+	|list|
+	list := MyList new.
+	list add: 'hello'.
+	list add: 'world'.
+	list at: 1 put: 'heello'.
+	
+	self assert: (list at: 1) value equals: 'heello'.
 ]
 
 { #category : #'as yet unclassified' }
@@ -38,8 +50,16 @@ MyListTest >> testRemoveAt [
 	list := MyList new.
 	list add: 'hello'.
 	list add: 'world'.
-	list removeat: 2.
+	list removeat: 1.
 	
+	self assert: list size equals: 1.
+]
+
+{ #category : #'as yet unclassified' }
+MyListTest >> testSize [
+	|list|
+	list := MyList new.
+	list add: 'hello'.
 	self assert: list size equals: 1.
 ]
 

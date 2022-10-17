@@ -35,10 +35,11 @@ MyList >> at: aNumber [
 
 { #category : #accessing }
 MyList >> at: aNumber put: setvalue [
-	|c next|
+	|c|
+	c := MyNode new.
 	c := begin.
-	1 to: aNumber -1 do: [ :i |next := c next].
-	next value: setvalue.
+	2 to: aNumber do: [ :i |c := c next].
+	c value: setvalue.
 	
 ]
 
@@ -60,12 +61,11 @@ MyList >> isEmpty [
 
 { #category : #accessing }
 MyList >> removeat: aNumber [
-	|current|
-	current := MyNode new.
-	current := self at: aNumber.
-	[(current isNil)] whileFalse: [ current := (current next)].
-	'aNumber -1 to: (self size) - 1 do: [ :i |current := current next].
-	'
+	| current |
+	aNumber to: ((self size) - 1) do: [ :i |
+		current := (self at: i) next.
+		self at: i put: (current value)].
+	self at: (self size) put: nil.
 	
 	
 ]
@@ -77,7 +77,7 @@ MyList >> size [
 	ifFalse: [ 
 		i:=1.
 		current := begin.
-		[(current next) isNil] whileFalse: [ i := i + 1 .
+		[(current next) value isNil] whileFalse: [ i := i + 1 .
 		current := current next].
 		^i]
 	
