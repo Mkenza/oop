@@ -37,9 +37,15 @@ EAdditionTest >> testNegated [
 ]
 
 { #category : #tests }
-EAdditionTest >> testPrinting [
-	"both printing methods"
-	self assert: EAddition fivePlusThree printString equals: '( 5 + 3 )'.
+EAdditionTest >> testPrintWith [
+
 	self assert: (EAddition fivePlusThree printWith: Dictionary new) equals: '( 5 + 3 )'.
 	self assert: (EAddition fivePlusThree negated printWith: Dictionary new) equals: '- ( 5 + 3 )'
+]
+
+{ #category : #tests }
+EAdditionTest >> testPrinting [
+
+	self assert: EAddition fivePlusThree printString equals: '( 5 + 3 )'.
+	self assert: EAddition fivePlusThree negated printString equals: '- ( 5 + 3 )'
 ]

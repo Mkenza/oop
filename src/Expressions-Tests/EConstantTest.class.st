@@ -20,7 +20,11 @@ EConstantTest >> testNegated [
 ]
 
 { #category : #tests }
+EConstantTest >> testPrintWith [
+	self assert: ((EConstant value: 5)printWith: Dictionary new) equals: '5'
+]
+
+{ #category : #tests }
 EConstantTest >> testPrinting [
 	self assert: (EConstant value: 5) printString equals: '5'.
-	self assert: ((EConstant value: 5)printWith: Dictionary new) equals: '5'
 ]

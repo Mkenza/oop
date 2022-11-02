@@ -29,8 +29,13 @@ EDivisionTest >> testEvaluateWithClassCreationMessage [
 ]
 
 { #category : #tests }
+EDivisionTest >> testPrintWith [
+	self assert: (EDivision fiveOfAThree negated printWith: Dictionary new)equals: '- ( 5 / 3 )'
+	
+]
+
+{ #category : #tests }
 EDivisionTest >> testPrinting [
 	self assert: EDivision fiveOfAThree negated printString equals: '- ( 5 / 3 )'.
-	self assert: (EDivision fiveOfAThree negated printWith: Dictionary new)equals: '- ( 5 / 3 )'
 	
 ]
