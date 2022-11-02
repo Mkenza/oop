@@ -26,3 +26,9 @@ ENegation >> expression: anExpression [
 ENegation >> negated [
 	^ self class new expression: self
 ]
+
+{ #category : #printing }
+ENegation >> printOn: aStream [
+	aStream nextPutAll: '- '.
+	expression printOn: aStream
+]

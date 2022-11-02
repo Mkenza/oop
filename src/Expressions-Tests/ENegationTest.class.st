@@ -18,3 +18,8 @@ ENegationTest >> testEvaluateWithClassCreationMessage [
 ENegationTest >> testNegationNegated [
 	self assert: (EConstant new value: 6) negated negated evaluate equals: 6
 ]
+
+{ #category : #tests }
+ENegationTest >> testPrinting [
+	self assert: (EConstant constant3 negated) printString equals: '- 3'
+]
