@@ -53,6 +53,7 @@ MyListTest >> testRemoveAt [
 	list removeat: 1.
 	
 	self assert: list size equals: 1.
+	self assert: (list at: 1) value equals: 'world'.
 ]
 
 { #category : #'as yet unclassified' }
@@ -68,4 +69,13 @@ MyListTest >> testSizeEmpty [
 	|list|
 	list := MyList new.
 	self assert: list size equals: 0.
+]
+
+{ #category : #tests }
+MyListTest >> testprintOn [
+	|list|
+	list := MyList new.
+	list add: 'hello'.
+	list add: 'world'.
+	self assert: list asString equals: '(nil,hello,world) (hello,world,nil) '
 ]

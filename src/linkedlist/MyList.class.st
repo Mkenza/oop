@@ -59,6 +59,24 @@ MyList >> isEmpty [
 	
 ]
 
+{ #category : #printing }
+MyList >> printOn: aStream [
+		|current|
+		current := MyNode new.
+		current := begin.
+		[current value isNil] whileFalse: [ aStream 
+		nextPut: $(;
+		nextPutAll: (current previous) value asString;
+		nextPut: $,;
+		nextPutAll: current value asString;
+		nextPut: $,;
+		nextPutAll: (current next) value asString;
+		nextPut: $);
+		nextPut: $ .
+		current := current next].
+	
+]
+
 { #category : #accessing }
 MyList >> removeat: aNumber [
 	| current |
