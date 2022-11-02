@@ -1,6 +1,6 @@
 Class {
 	#name : #EConstant,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'value'
 	],
@@ -8,13 +8,13 @@ Class {
 }
 
 { #category : #accessing }
-EConstant >> evaluate [
-	^value
+EConstant class >> value: anInteger [
+	^ self new value: anInteger
 ]
 
-{ #category : #arithmetic }
-EConstant >> negated [
-	^ ENegation new expression: self
+{ #category : #accessing }
+EConstant >> evaluate [
+	^value
 ]
 
 { #category : #tests }

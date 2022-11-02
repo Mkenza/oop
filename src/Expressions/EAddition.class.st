@@ -1,12 +1,17 @@
 Class {
 	#name : #EAddition,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'left',
 		'right'
 	],
 	#category : #Expressions
 }
+
+{ #category : #'instance creation' }
+EAddition class >> left: anEExpression right: anEExpression2 [
+	^ self new left: anEExpression; right: anEExpression2
+]
 
 { #category : #'public access' }
 EAddition >> evaluate [
@@ -16,11 +21,6 @@ EAddition >> evaluate [
 { #category : #accessing }
 EAddition >> left: anExpression [
 	left := anExpression.
-]
-
-{ #category : #arithmetic }
-EAddition >> negated [
-	^ ENegation new expression: self
 ]
 
 { #category : #'instance creation' }

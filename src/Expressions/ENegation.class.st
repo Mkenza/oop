@@ -1,11 +1,16 @@
 Class {
 	#name : #ENegation,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'expression'
 	],
 	#category : #Expressions
 }
+
+{ #category : #'instance creation' }
+ENegation class >> expression: anExpression [
+	^ self new expression: anExpression
+]
 
 { #category : #'public access' }
 ENegation >> evaluate [
