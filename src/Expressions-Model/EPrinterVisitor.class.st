@@ -15,6 +15,11 @@ EPrinterVisitor >> visitConstant: aConstant [
 ]
 
 { #category : #visiting }
+EPrinterVisitor >> visitDivision: aDivision [
+	^self visitOperation: aDivision 
+]
+
+{ #category : #visiting }
 EPrinterVisitor >> visitMultiplication: aMultiplication [
 	^self visitOperation: aMultiplication 
 ]
@@ -29,7 +34,12 @@ EPrinterVisitor >> visitOperation: anOperation [
 	| lefts rights |
 	lefts := anOperation  left accept: self.
 	rights := anOperation  right accept: self.
-	^ '(', lefts , anOperation operationString , rights, ')'
+	^ '( ', lefts , anOperation operatorString , rights, ' )'
+]
+
+{ #category : #visiting }
+EPrinterVisitor >> visitPower: aPower [
+	^self visitOperation: aPower
 ]
 
 { #category : #visiting }

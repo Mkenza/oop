@@ -30,26 +30,8 @@ EConstant >> accept: aVisitor [
 ]
 
 { #category : #printing }
-EConstant >> asString [
-	^self accept: EPrinterVisitor new.
-]
-
-{ #category : #printing }
 EConstant >> printOn: aStream [
 	value printOn: aStream
-]
-
-{ #category : #tests }
-EConstant >> testEvaluate [
-
-	| ep1 ep2 |
-	ep1 := EConstant new value: 5.
-	ep2 := EConstant new value: 3.
-	self
-		assert: ((EAddition new
-				  right: ep1;
-				  left: ep2) evaluateWith: Dictionary new)
-		equals: 8
 ]
 
 { #category : #accessing }

@@ -21,3 +21,11 @@ EExpression >> evaluateWith: anEnvironment [
 EExpression >> negated [
 	^ ENegation new expression: self
 ]
+
+{ #category : #'public access' }
+EExpression >> printWith: anEnvironment [
+	| visitor |
+	visitor := EPrinterVisitor new.
+	visitor bindings: anEnvironment.
+	^ self accept: visitor.
+]

@@ -29,5 +29,5 @@ ENegationTest >> testNegationNegated [
 
 { #category : #tests }
 ENegationTest >> testPrinting [
-	self assert: (EConstant constant3 negated) printString equals: '- 3'
+	self assert: ((EConstant constant3 negated) printWith: Dictionary new) equals: '- 3'
 ]

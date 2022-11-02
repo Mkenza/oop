@@ -15,6 +15,11 @@ EVariableTest >> testEvaluateXplusY [
 ]
 
 { #category : #tests }
+EVariableTest >> testPrinting [
+	self assert: ((EVariable new id: #x) printWith: {#x -> 10} asDictionary) equals: '- (#x,10)'
+]
+
+{ #category : #tests }
 EVariableTest >> testValueOfx [
 self assert: ((EVariable new id: #x) evaluateWith: {#x -> 10} asDictionary) equals: 10.
 ]

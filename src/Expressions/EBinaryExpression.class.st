@@ -13,11 +13,6 @@ EBinaryExpression class >> left: anEExpression right: anEExpression2 [
 	^ self new left: anEExpression; right: anEExpression2
 ]
 
-{ #category : #converting }
-EBinaryExpression >> asString [
-	self accept: EPrinterVisitor new.
-]
-
 { #category : #'as yet unclassified' }
 EBinaryExpression >> left [
 	^left
