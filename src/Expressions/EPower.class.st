@@ -14,8 +14,10 @@ EPower class >> fivePowerThree [
 ]
 
 { #category : #'public access' }
-EPower >> evaluate [
-	^left evaluate ** right evaluate
+EPower >> evaluateWith: anObject [
+
+	^ (left evaluateWith: anObject)
+	  ** (right evaluateWith: anObject)
 ]
 
 { #category : #'public access' }

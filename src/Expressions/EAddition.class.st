@@ -14,15 +14,13 @@ EAddition class >> fivePlusThree [
 ]
 
 { #category : #'public access' }
-EAddition >> evaluate [
-	^left evaluate + right evaluate
+EAddition >> evaluateWith: anObject [
+
+	^ (left evaluateWith: anObject)
+	  + (right evaluateWith: anObject)
 ]
 
-{ #category : #printing }
-EAddition >> printOn: aStream [
-	aStream nextPutAll: '( '.
-	left printOn: aStream.
-	aStream nextPutAll: ' + '.
-	right printOn: aStream.
-	aStream nextPutAll: ' )'.
+{ #category : #'public access' }
+EAddition >> operatorString [
+	^ ' + '
 ]

@@ -13,6 +13,11 @@ EBinaryExpression class >> left: anEExpression right: anEExpression2 [
 	^ self new left: anEExpression; right: anEExpression2
 ]
 
+{ #category : #'as yet unclassified' }
+EBinaryExpression >> evaluateWith: anObject [
+	^ self subclassResponsibility
+]
+
 { #category : #accessing }
 EBinaryExpression >> left: anExpression [
 	left := anExpression.
@@ -20,7 +25,7 @@ EBinaryExpression >> left: anExpression [
 
 { #category : #'as yet unclassified' }
 EBinaryExpression >> operatorString [
-	^ ' + '
+	^ self subclassResponsibility
 ]
 
 { #category : #printing }

@@ -14,8 +14,10 @@ EDivision class >> fiveOfAThree [
 ]
 
 { #category : #'public access' }
-EDivision >> evaluate [
-	^left evaluate / right evaluate
+EDivision >> evaluateWith: anObject [
+
+	^ (left evaluateWith: anObject)
+	  / (right evaluateWith: anObject)
 ]
 
 { #category : #'public access' }

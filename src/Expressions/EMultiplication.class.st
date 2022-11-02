@@ -14,8 +14,10 @@ EMultiplication class >> fiveTimesThree [
 ]
 
 { #category : #'public access' }
-EMultiplication >> evaluate [
-	^left evaluate * right evaluate
+EMultiplication >> evaluateWith: anObject [
+
+	^ (left evaluateWith: anObject)
+	  * (right evaluateWith: anObject)
 ]
 
 { #category : #'as yet unclassified' }
