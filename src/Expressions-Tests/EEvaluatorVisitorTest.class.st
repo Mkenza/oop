@@ -23,6 +23,21 @@ EEvaluatorVisitorTest >> testVisitConstantReturnsConstantValue [
 ]
 
 { #category : #tests }
+EEvaluatorVisitorTest >> testVisitDivisionBĀZeroThrowsEÿception [
+	| expression |
+	expression := EDivision numerator: (EConstant value: 6) denominator: (EConstant value: 0).
+	self should: [expression accept: EEvaluatorVisitor new]raise: ZeroDivide.
+]
+
+{ #category : #tests }
+EEvaluatorVisitorTest >> testVisitDivisionReturnsDivisionResult [
+	| expression result |
+	expression := EDivision numerator: (EConstant value: 6) denominator: (EConstant value: 3).
+	result := expression accept: EEvaluatorVisitor new.
+	self assert: result equals: 2
+]
+
+{ #category : #tests }
 EEvaluatorVisitorTest >> testVisitMultiplicationReturnsMultiplicationResult [
 	| expression result |
 	expression := EMultiplication
