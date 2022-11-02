@@ -29,7 +29,13 @@ EPowerTest >> testEvaluateWithClassCreationMessage [
 ]
 
 { #category : #tests }
+EPowerTest >> testPrintWith [
+	self assert: (EPower fivePowerThree negated printWith: Dictionary new) equals: '- ( 5 ** 3 )'
+
+]
+
+{ #category : #tests }
 EPowerTest >> testPrinting [
 	self assert: EPower fivePowerThree negated printString equals: '- ( 5 ** 3 )'.
-	self assert: (EPower fivePowerThree negated printWith: Dictionary new) equals: '- ( 5 ** 3 )'
+
 ]
