@@ -1,11 +1,11 @@
 Class {
-	#name : #EMultiplication,
+	#name : #EPower,
 	#superclass : #EBinaryExpression,
 	#category : #Expressions
 }
 
 { #category : #'as yet unclassified' }
-EMultiplication class >> fiveTimesThree [
+EPower class >> fivePowerThree [
 	<sampleInstance>
 	| ep1 ep2 |
 	ep1 := EConstant constant5.
@@ -14,11 +14,11 @@ EMultiplication class >> fiveTimesThree [
 ]
 
 { #category : #'public access' }
-EMultiplication >> evaluate [
-	^left evaluate * right evaluate
+EPower >> evaluate [
+	^left evaluate ** right evaluate
 ]
 
-{ #category : #'as yet unclassified' }
-EMultiplication >> operatorString [
-	^ ' * '
+{ #category : #'public access' }
+EPower >> operatorString [
+	^ ' ** '
 ]

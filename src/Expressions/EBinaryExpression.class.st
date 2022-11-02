@@ -8,9 +8,28 @@ Class {
 	#category : #Expressions
 }
 
+{ #category : #'instance creation' }
+EBinaryExpression class >> left: anEExpression right: anEExpression2 [
+	^ self new left: anEExpression; right: anEExpression2
+]
+
 { #category : #accessing }
 EBinaryExpression >> left: anExpression [
 	left := anExpression.
+]
+
+{ #category : #'as yet unclassified' }
+EBinaryExpression >> operatorString [
+	^ ' + '
+]
+
+{ #category : #printing }
+EBinaryExpression >> printOn: aStream [
+	aStream nextPutAll: '( '.
+	left printOn: aStream.
+	aStream nextPutAll: self operatorString.
+	right printOn: aStream.
+	aStream nextPutAll: ' )'
 ]
 
 { #category : #'instance creation' }
