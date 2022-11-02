@@ -23,7 +23,7 @@ EEvaluatorVisitorTest >> testVisitConstantReturnsConstantValue [
 ]
 
 { #category : #tests }
-EEvaluatorVisitorTest >> testVisitDivisionBĀZeroThrowsEÿception [
+EEvaluatorVisitorTest >> testVisitDivisionByZeroThrowsException [
 	| expression |
 	expression := EDivision numerator: (EConstant value: 6) denominator: (EConstant value: 0).
 	self should: [expression accept: EEvaluatorVisitor new]raise: ZeroDivide.
@@ -45,6 +45,14 @@ EEvaluatorVisitorTest >> testVisitMultiplicationReturnsMultiplicationResult [
 	right: (EConstant value: -2).
 	result := expression accept: EEvaluatorVisitor new.
 	self assert: result equals: -14
+]
+
+{ #category : #tests }
+EEvaluatorVisitorTest >> testVisitMultiplicationReturnsPowerResult [
+	| expression result |
+	expression := EPower left: (EConstant value: 7) right: (EConstant value: 2).
+	result := expression accept: EEvaluatorVisitor new.
+	self assert: result equals: 49
 ]
 
 { #category : #tests }

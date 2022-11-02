@@ -13,11 +13,14 @@ EPower class >> fivePowerThree [
 	^ self new left: ep1 ; right: ep2
 ]
 
+{ #category : #visiting }
+EPower >> accept: aVisitor [
+	^aVisitor visitPower: self
+]
+
 { #category : #'public access' }
 EPower >> evaluateWith: anObject [
-
-	^ (left evaluateWith: anObject)
-	  ** (right evaluateWith: anObject)
+	^self accept: EEvaluatorVisitor new
 ]
 
 { #category : #'public access' }
