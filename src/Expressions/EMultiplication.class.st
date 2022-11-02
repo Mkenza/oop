@@ -20,7 +20,7 @@ EMultiplication >> accept: aVisitor [
 
 { #category : #'public access' }
 EMultiplication >> evaluateWith: anObject [
-	self accept: EEvaluatorVisitor new
+	^self accept: EEvaluatorVisitor new
 ]
 
 { #category : #'as yet unclassified' }
