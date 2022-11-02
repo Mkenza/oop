@@ -18,6 +18,11 @@ EBinaryExpression >> evaluateWith: anObject [
 	^ self subclassResponsibility
 ]
 
+{ #category : #'as yet unclassified' }
+EBinaryExpression >> left [
+	^left
+]
+
 { #category : #accessing }
 EBinaryExpression >> left: anExpression [
 	left := anExpression.
@@ -35,6 +40,11 @@ EBinaryExpression >> printOn: aStream [
 	aStream nextPutAll: self operatorString.
 	right printOn: aStream.
 	aStream nextPutAll: ' )'
+]
+
+{ #category : #'as yet unclassified' }
+EBinaryExpression >> right [
+	^right
 ]
 
 { #category : #'instance creation' }

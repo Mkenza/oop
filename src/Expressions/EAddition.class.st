@@ -13,11 +13,14 @@ EAddition class >> fivePlusThree [
 	^ self new left: ep1 ; right: ep2
 ]
 
+{ #category : #visiting }
+EAddition >> accept: aVisitor [
+	^ aVisitor visitAddition: self
+]
+
 { #category : #'public access' }
 EAddition >> evaluateWith: anObject [
-
-	^ (left evaluateWith: anObject)
-	  + (right evaluateWith: anObject)
+	^ self accept: EEvaluatorVisitor new
 ]
 
 { #category : #'public access' }

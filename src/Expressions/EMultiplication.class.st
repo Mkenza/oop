@@ -14,10 +14,13 @@ EMultiplication class >> fiveTimesThree [
 ]
 
 { #category : #'public access' }
-EMultiplication >> evaluateWith: anObject [
+EMultiplication >> accept: aVisitor [
+	^aVisitor visitMultiplication: self
+]
 
-	^ (left evaluateWith: anObject)
-	  * (right evaluateWith: anObject)
+{ #category : #'public access' }
+EMultiplication >> evaluateWith: anObject [
+	self accept: EEvaluatorVisitor new
 ]
 
 { #category : #'as yet unclassified' }

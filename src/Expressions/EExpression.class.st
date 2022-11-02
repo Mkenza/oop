@@ -4,6 +4,11 @@ Class {
 	#category : #Expressions
 }
 
+{ #category : #visiting }
+EExpression >> accept: aVisitor [
+	self subclassResponsibility
+]
+
 { #category : #arithmetic }
 EExpression >> negated [
 	^ ENegation new expression: self

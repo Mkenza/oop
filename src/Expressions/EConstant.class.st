@@ -25,8 +25,13 @@ EConstant class >> value: anInteger [
 ]
 
 { #category : #accessing }
+EConstant >> accept: aVisitor [
+	^ aVisitor visitConstant: self
+]
+
+{ #category : #accessing }
 EConstant >> evaluateWith: anObject [
-	^value
+	^ self accept: EEvaluatorVisitor new
 ]
 
 { #category : #printing }
@@ -45,6 +50,11 @@ EConstant >> testEvaluate [
 				  right: ep1;
 				  left: ep2) evaluateWith: Dictionary new)
 		equals: 8
+]
+
+{ #category : #accessing }
+EConstant >> value [
+	^value
 ]
 
 { #category : #accessing }
