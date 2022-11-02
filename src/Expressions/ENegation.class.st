@@ -24,7 +24,7 @@ ENegation >> expression: anExpression [
 
 { #category : #arithmetic }
 ENegation >> negated [
-	^ self class new expression: self
+	^ expression
 ]
 
 { #category : #printing }

@@ -1,10 +1,6 @@
 Class {
 	#name : #EAddition,
-	#superclass : #EExpression,
-	#instVars : [
-		'left',
-		'right'
-	],
+	#superclass : #EBinaryExpression,
 	#category : #Expressions
 }
 
@@ -27,11 +23,6 @@ EAddition >> evaluate [
 	^left evaluate + right evaluate
 ]
 
-{ #category : #accessing }
-EAddition >> left: anExpression [
-	left := anExpression.
-]
-
 { #category : #printing }
 EAddition >> printOn: aStream [
 	aStream nextPutAll: '( '.
@@ -39,10 +30,4 @@ EAddition >> printOn: aStream [
 	aStream nextPutAll: ' + '.
 	right printOn: aStream.
 	aStream nextPutAll: ' )'.
-]
-
-{ #category : #'instance creation' }
-EAddition >> right: anExpression [ 
-	right := anExpression.
-	
 ]
