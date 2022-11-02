@@ -32,11 +32,6 @@ EDivision >> denominator [
 	^denom
 ]
 
-{ #category : #'public access' }
-EDivision >> evaluateWith: anObject [
-	^ self accept: EEvaluatorVisitor new
-]
-
 { #category : #private }
 EDivision >> numerator [
 	^num

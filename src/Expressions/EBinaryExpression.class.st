@@ -13,9 +13,9 @@ EBinaryExpression class >> left: anEExpression right: anEExpression2 [
 	^ self new left: anEExpression; right: anEExpression2
 ]
 
-{ #category : #'as yet unclassified' }
-EBinaryExpression >> evaluateWith: anObject [
-	^ self subclassResponsibility
+{ #category : #converting }
+EBinaryExpression >> asString [
+	self accept: EPrinterVisitor new.
 ]
 
 { #category : #'as yet unclassified' }

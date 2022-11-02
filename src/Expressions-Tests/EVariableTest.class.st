@@ -21,5 +21,5 @@ self assert: ((EVariable new id: #x) evaluateWith: {#x -> 10} asDictionary) equa
 
 { #category : #tests }
 EVariableTest >> testValueOfxInNegation [
-	self assert: ((EVariable new id: #x) negated evaluateWith: {#x -> 10} asDictionary) equals: -10
+	self assert: ((EVariable id: #x) negated evaluateWith: {#x -> 10} asDictionary) equals: -10
 ]

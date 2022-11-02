@@ -19,11 +19,6 @@ EAddition >> accept: aVisitor [
 ]
 
 { #category : #'public access' }
-EAddition >> evaluateWith: anObject [
-	^ self accept: EEvaluatorVisitor new
-]
-
-{ #category : #'public access' }
 EAddition >> operatorString [
 	^ ' + '
 ]

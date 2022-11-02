@@ -29,14 +29,14 @@ EConstant >> accept: aVisitor [
 	^ aVisitor visitConstant: self
 ]
 
-{ #category : #accessing }
-EConstant >> evaluateWith: anObject [
-	^ self accept: EEvaluatorVisitor new
+{ #category : #printing }
+EConstant >> asString [
+	^self accept: EPrinterVisitor new.
 ]
 
 { #category : #printing }
 EConstant >> printOn: aStream [
-	aStream nextPutAll: value printString
+	value printOn: aStream
 ]
 
 { #category : #tests }

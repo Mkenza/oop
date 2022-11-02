@@ -17,12 +17,6 @@ ENegation >> accept: aVisitor [
 	^ aVisitor visitNegation: self
 ]
 
-{ #category : #'public access' }
-ENegation >> evaluateWith: anObject [
-
-	^ self accept: EEvaluatorVisitor new
-]
-
 { #category : #accessing }
 ENegation >> expression [
 	^expression

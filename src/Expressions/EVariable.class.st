@@ -8,8 +8,18 @@ Class {
 }
 
 { #category : #accessing }
-EVariable >> evaluateWith: aBindingDictionary [
-	^ aBindingDictionary at: id
+EVariable class >> id: anId [
+	^self new id: anId; yourself
+]
+
+{ #category : #visiting }
+EVariable >> accept: aVisitor [
+	^ aVisitor visitVariable: self
+]
+
+{ #category : #accessing }
+EVariable >> id [
+	^id
 ]
 
 { #category : #accessing }

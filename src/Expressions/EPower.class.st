@@ -19,11 +19,6 @@ EPower >> accept: aVisitor [
 ]
 
 { #category : #'public access' }
-EPower >> evaluateWith: anObject [
-	^self accept: EEvaluatorVisitor new
-]
-
-{ #category : #'public access' }
 EPower >> operatorString [
 	^ ' ** '
 ]
