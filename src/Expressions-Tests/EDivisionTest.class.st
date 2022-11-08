@@ -13,6 +13,15 @@ EDivisionTest >> testEvaluate [
 ]
 
 { #category : #tests }
+EDivisionTest >> testEvaluateDivisionByZeroThrowsException [
+	| expression |
+	expression := EDivision
+	numerator: (EConstant value: 6)
+	denominator: (EConstant value: 0).
+	self should: [expression evaluateWith: Dictionary new] raise: EZeroDenominator 
+]
+
+{ #category : #tests }
 EDivisionTest >> testEvaluateNegated [
 	| ep1 ep2 |
 	ep1 := EConstant constant5.

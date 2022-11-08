@@ -41,6 +41,8 @@ EDivision >> numerator [
 EDivision >> numerator:  aValue denominator: aSecondValue [
 	num := aValue.
 	denom := 	aSecondValue .
+	left := num.
+	right := denom.
 ]
 
 { #category : #'public access' }

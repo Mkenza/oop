@@ -16,7 +16,9 @@ EEvaluatorVisitor >> visitConstant: aConstant [
 
 { #category : #visiting }
 EEvaluatorVisitor >> visitDivision: anEDivision [
-^ (anEDivision numerator accept: self) / (anEDivision denominator accept: self)
+
+	  ((anEDivision denominator accept: self) = 0) ifTrue: [EZeroDenominator signal: 'Division by Zero'].
+	^ (anEDivision numerator accept: self) / (anEDivision denominator accept: self)
 ]
 
 { #category : #visiting }

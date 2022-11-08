@@ -17,7 +17,7 @@ self assert: result equals: '( 7 + 2 )'
 { #category : #tests }
 EPrinterVisitorTest >> testVisitAdditionReturnsDivisionResult [
 | expression result |
-expression := EDivision  left: (EConstant value: 7) right: (EConstant value: 2).
+expression := EDivision  numerator: (EConstant value: 7) denominator: (EConstant value: 2).
 result := expression accept: EPrinterVisitor new.
 self assert: result equals: '( 7 / 2 )'
 ]
