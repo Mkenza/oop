@@ -1,10 +1,6 @@
 Class {
 	#name : #EDivision,
 	#superclass : #EBinaryExpression,
-	#instVars : [
-		'num',
-		'denom'
-	],
 	#category : #Expressions
 }
 
@@ -29,20 +25,18 @@ EDivision >> accept: aVisitor [
 
 { #category : #private }
 EDivision >> denominator [ 
-	^denom
+	^right
 ]
 
 { #category : #private }
 EDivision >> numerator [
-	^num
+	^left
 ]
 
 { #category : #'as yet unclassified' }
 EDivision >> numerator:  aValue denominator: aSecondValue [
-	num := aValue.
-	denom := 	aSecondValue .
-	left := num.
-	right := denom.
+	left := aValue.
+	right := 	aSecondValue .
 ]
 
 { #category : #'public access' }
