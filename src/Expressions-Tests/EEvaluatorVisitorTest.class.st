@@ -48,19 +48,19 @@ EEvaluatorVisitorTest >> testVisitMultiplicationReturnsMultiplicationResult [
 ]
 
 { #category : #tests }
-EEvaluatorVisitorTest >> testVisitMultiplicationReturnsPowerResult [
-	| expression result |
-	expression := EPower left: (EConstant value: 7) right: (EConstant value: 2).
-	result := expression accept: EEvaluatorVisitor new.
-	self assert: result equals: 49
-]
-
-{ #category : #tests }
 EEvaluatorVisitorTest >> testVisitNegationReturnsNegatedConstant [
 | expression result |
 expression := (EConstant value: 7) negated.
 result := expression accept: EEvaluatorVisitor new.
 self assert: result equals: -7
+]
+
+{ #category : #tests }
+EEvaluatorVisitorTest >> testVisitPowerReturnsPowerResult [
+	| expression result |
+	expression := EPower term: (EConstant value: 7) power: (EConstant value: 2).
+	result := expression accept: EEvaluatorVisitor new.
+	self assert: result equals: 49
 ]
 
 { #category : #tests }

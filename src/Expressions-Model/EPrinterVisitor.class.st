@@ -44,8 +44,5 @@ EPrinterVisitor >> visitPower: aPower [
 
 { #category : #visiting }
 EPrinterVisitor >> visitVariable: aVariable [
-	|value valstring|
-	value := bindings at: aVariable id.
-	valstring :=value asString.
-	^ '( ', aVariable id, ':', valstring, ' )'
+	^ aVariable id
 ]

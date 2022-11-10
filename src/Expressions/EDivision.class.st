@@ -10,7 +10,7 @@ EDivision class >> fiveOfAThree [
 	| ep1 ep2 |
 	ep1 := EConstant constant5.
 	ep2 := EConstant constant3.
-	^ self new left: ep1 ; right: ep2
+	^ self new numerator: ep1 denominator: ep2
 ]
 
 { #category : #'instance creation' }
